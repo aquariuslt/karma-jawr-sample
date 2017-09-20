@@ -1,0 +1,19 @@
+# IDE
+.idea
+*.iml
+
+.settings
+.project
+.classpath
+
+.vscode
+
+*.sublime
+
+# Maven
+target
+
+# JRebel
+rebel.xml
+
+
