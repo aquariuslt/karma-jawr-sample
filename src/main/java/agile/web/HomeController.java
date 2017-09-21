@@ -15,4 +15,9 @@ public class HomeController {
         return new ModelAndView("index");
     }
 
+    @GetMapping("/hello")
+    @ResponseBody
+    public String helloResponse() {
+        return "hello";
+    }
 }

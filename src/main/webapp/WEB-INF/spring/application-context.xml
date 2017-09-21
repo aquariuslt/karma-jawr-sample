@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="dispatcher-config.xml"/>
-    <import resource="spring-jawr-config.xml"/>
+    <import resource="jawr-config.xml"/>
 
     <context:component-scan base-package="agile.web"/>
 </beans>
