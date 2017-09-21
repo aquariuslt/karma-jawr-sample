@@ -16,7 +16,7 @@
     <!--Spring ApplicationContext Param -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring/application-context.xml</param-value>
+        <param-value>/spring/application-context.xml</param-value>
     </context-param>
 
     <!--JSF Context Param Start-->
@@ -41,10 +41,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>FacesServlet</servlet-name>-->
-        <!--<url-pattern>/faces/*</url-pattern>-->
-    <!--</servlet-mapping>-->
 
     <servlet-mapping>
         <servlet-name>FacesServlet</servlet-name>
@@ -67,7 +63,7 @@
         </servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value/>
+            <param-value>/spring/dispatcher-config.xml</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
@@ -80,6 +76,10 @@
     <servlet>
         <servlet-name>spring-jawr</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/spring/jawr-config.xml</param-value>
+        </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>
