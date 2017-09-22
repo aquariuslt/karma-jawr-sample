@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.11.RELEASE</spring.version>
         <spring.webflow.version>2.4.6.RELEASE</spring.webflow.version>
+        <jawr.version>3.9</jawr.version>
     </properties>
 
     <dependencies>
@@ -66,8 +67,16 @@
         <dependency>
             <groupId>net.jawr</groupId>
             <artifactId>jawr-core</artifactId>
-            <version>3.9</version>
+            <version>${jawr.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.jawr.extensions/jawr-spring-extension -->
+        <dependency>
+            <groupId>net.jawr.extensions</groupId>
+            <artifactId>jawr-spring-extension</artifactId>
+            <version>${jawr.version}</version>
+        </dependency>
+
 
 
         <!-- MLDD -->
