@@ -8,6 +8,8 @@
        http://www.springframework.org/schema/util/spring-util.xsd">
 
 
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
     <!-- Base Jawr config -->
     <bean abstract="true" id="jawrBase" class="net.jawr.web.servlet.JawrSpringController">
         <property name="configuration">
@@ -29,8 +31,6 @@
             <props>
                 <prop key="/**/*.js">jawrJsController</prop>
                 <prop key="/**/*.css">jawrCSSController</prop>
-                <prop key="/**/*.jpg">jawrCSSController</prop>
-                <prop key="/**/*.png">jawrCSSController</prop>
             </props>
         </property>
     </bean>

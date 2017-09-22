@@ -5,13 +5,22 @@
 <head>
   <title>Spring + JAWR + Ext 3 Sample Page</title>
 
+  <jawr:style src="/cssBundles/ext.css"/>
+  <jawr:script src="/jsBundles/extJs.js"/>
+  <jawr:script src="/jsBundles/home.js"/>
 </head>
 
 <body>
-<h1>Spring + JAWR + Ext 3 Sample Page</h1>
 
-
-<jawr:script src="/jsBundles/extJs.js"/>
-<jawr:script src="/jsBundles/home.js"/>
+<script type="text/javascript">
+  Ext.MessageBox.show({
+    title: 'Address',
+    msg: 'Please enter your address:',
+    width: 300,
+    buttons: Ext.MessageBox.OKCANCEL,
+    multiline: true,
+    animEl: 'mb3'
+  });
+</script>
 </body>
 </html>
