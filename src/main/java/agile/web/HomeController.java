@@ -3,7 +3,6 @@ package agile.web;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,13 +17,13 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView indexView() {
         log.info("render index page");
-        return new ModelAndView("index");
+        return new ModelAndView("home");
     }
 
     @RequestMapping("/home")
     public ModelAndView homeView() {
         log.info("render home page");
-        return new ModelAndView("index");
+        return new ModelAndView("home");
     }
 
     @RequestMapping("/hello")

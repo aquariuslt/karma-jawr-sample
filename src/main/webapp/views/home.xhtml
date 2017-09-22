@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:jawr="https://jawr.java.net/jsf/facelets">
@@ -13,13 +12,11 @@
 <body>
 
 <script type="text/javascript">
-  Ext.MessageBox.show({
-    title: 'Address',
-    msg: 'Please enter your address:',
-    width: 300,
-    buttons: Ext.MessageBox.OKCANCEL,
-    multiline: true,
-    animEl: 'mb3'
+  Ext.onReady(function() {
+    Ext.QuickTips.init();
+    new agile.example.app.Home({
+      renderTo: Ext.getBody()
+    });
   });
 </script>
 </body>
