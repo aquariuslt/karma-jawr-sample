@@ -16,4 +16,13 @@ target
 # JRebel
 rebel.xml
 
+# Log
+*.log
 
+# Node
+node_modules
+package-lock.json
+yarn.lock
+
+# Karma Mocha Coverage Series
+coverage
