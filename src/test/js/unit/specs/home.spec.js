@@ -1,7 +1,11 @@
-var pathUtil = require('../../../../../tasks/utils/path.util');
 
 
 describe('home', function() {
+
+  before(function() {
+    console.log(window.jawrLoader);
+  });
+
   it('test home resources load correctly', function() {
     expect(1).to.eq(1);
   });

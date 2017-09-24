@@ -12,17 +12,33 @@ module.exports = function(config) {
     browsers: [
       'ChromiumHeadless'
     ],
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-coverage',
+      'karma-coverage-istanbul-reporter',
+      'karma-mocha',
+      'karma-sinon-chai',
+      'karma-spec-reporter',
+      'karma-jawr',
+      'karma-jawr-preprocessor'
+    ],
     frameworks: [
       'mocha',
-      'sinon-chai'
+      'sinon-chai',
+      'jawr'
     ],
     files: [
-      pathUtil.resolve('src/test/js/unit/specs/**/*.spec.js')
+      pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
       'spec',
       'coverage-istanbul'
     ],
+    jawrPreprocessor: {
+      jawrLoader: {
+        resources: ['hello']
+      }
+    },
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
       reports: ['html', 'lcovonly', 'text-summary'],
@@ -36,6 +52,9 @@ module.exports = function(config) {
           functions: 80
         }
       }
+    },
+    jawr: {
+      type: 'properties'
     }
   });
 };
