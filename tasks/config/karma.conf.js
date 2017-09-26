@@ -1,4 +1,5 @@
 var pathUtil = require('../utils/path.util');
+var webpackTestConfig = require('./webpack.test.config');
 
 var puppeteerPkg = require('puppeteer/package.json');
 var Downloader = require('puppeteer/utils/ChromiumDownloader');
@@ -19,13 +20,12 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-sinon-chai',
       'karma-spec-reporter',
-      'karma-jawr',
-      'karma-jawr-preprocessor'
+      'karma-sourcemap-loader',
+      'karma-webpack'
     ],
     frameworks: [
       'mocha',
-      'sinon-chai',
-      'jawr'
+      'sinon-chai'
     ],
     files: [
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
@@ -34,27 +34,28 @@ module.exports = function(config) {
       'spec',
       'coverage-istanbul'
     ],
-    jawrPreprocessor: {
-      jawrLoader: {
-        resources: ['hello']
-      }
+    preprocessors: {
+      '/**/*.spec.js': ['webpack', 'sourcemap']
     },
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
       reports: ['html', 'lcovonly', 'text-summary'],
+      fixWebpackSourcePaths: true,
       skipFilesWithNoCoverage: true,
       thresholds: {
         emitWarning: false,
         global: {
-          statements: 80,
-          lines: 80,
-          branches: 80,
-          functions: 80
+          statements: 1,
+          lines: 1,
+          branches: 1,
+          functions: 1
         }
       }
     },
-    jawr: {
-      type: 'properties'
+    webpack: webpackTestConfig,
+    webpackMiddleware: {
+      stats: 'errors-only',
+      noInfo: true
     }
   });
 };
