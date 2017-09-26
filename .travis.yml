@@ -15,4 +15,4 @@ script: yarn run test
 
 # Submit Coverage Status to coveralls.io
 after_script:
-  - cat .src/test/js/unit/coverage/lcov.info | ./node_modules/.bin/coveralls
+  - cat ./src/test/js/unit/coverage/lcov.info | ./node_modules/.bin/coveralls
