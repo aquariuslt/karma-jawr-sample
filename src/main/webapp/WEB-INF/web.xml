@@ -10,11 +10,10 @@
     <display-name>Spring JAWR Ext3</display-name>
 
 
-
     <!--Spring ApplicationContext Param -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/spring/application-context.xml</param-value>
+        <param-value>classpath*:/spring/jawr-config.xml classpath*:/spring/dispatcher-config.xml</param-value>
     </context-param>
 
     <!--JSF Context Param Start-->
@@ -55,29 +54,27 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/spring/jawr-config.xml</param-value>
+            <param-value>classpath*:/spring/jawr-config.xml</param-value>
         </init-param>
-        <load-on-startup>2</load-on-startup>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>spring-jawr</servlet-name>
         <url-pattern>*.js</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>spring-jawr</servlet-name>
         <url-pattern>*.css</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.png</url-pattern>
     </servlet-mapping>
+
 
 
     <!--Spring MVC Dispatcher Servlet-->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/spring/dispatcher-config.xml</param-value>
+            <param-value>classpath*:/spring/dispatcher-config.xml</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
