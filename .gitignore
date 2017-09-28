@@ -25,4 +25,5 @@ package-lock.json
 yarn.lock
 
 # Karma Mocha Coverage Series
+build
 coverage

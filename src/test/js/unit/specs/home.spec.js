@@ -1,10 +1,6 @@
 /* Vendor import */
-require('@/vendor/ext/ext-base');
-require('@/vendor/ext/ext-all');
-
-require('@/home/datastore/home.base.datastore');
-require('@/home/ui/home.ui');
-require('@/home/impl/home.impl');
+require('@/jsBundles/extJs.js/');
+require('@/jsBundles/home.js/');
 
 describe('home', function() {
 

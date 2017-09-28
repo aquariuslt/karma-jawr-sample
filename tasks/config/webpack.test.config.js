@@ -7,7 +7,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      '@': pathUtil.resolve('/src/main/webapp/js')
+      '@': pathUtil.resolve('/src/test/js/build')
     }
   },
   output: {
@@ -24,6 +24,7 @@ module.exports = {
         ],
         exclude: [
           /node_modules/,
+          /build/,
           /vendor/
         ],
         loader: 'istanbul-instrumenter-loader'

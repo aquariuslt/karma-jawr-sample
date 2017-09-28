@@ -21,9 +21,11 @@ module.exports = function(config) {
       'karma-sinon-chai',
       'karma-spec-reporter',
       'karma-sourcemap-loader',
-      'karma-webpack'
+      'karma-webpack',
+      'karma-jawr'
     ],
     frameworks: [
+      'jawr',
       'mocha',
       'sinon-chai'
     ],
@@ -36,6 +38,11 @@ module.exports = function(config) {
     ],
     preprocessors: {
       '/**/*.spec.js': ['webpack', 'sourcemap']
+    },
+    jawr: {
+      configLocation: pathUtil.resolve('src/main/webapp/jawr/') + 'jawr.properties',
+      webappLocation: pathUtil.resolve('src/main/webapp'),
+      targetLocation: pathUtil.resolve('src/test/js/build')
     },
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
