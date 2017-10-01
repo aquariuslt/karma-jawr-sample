@@ -18,11 +18,12 @@ describe('home', function() {
   });
 
   it('test home resources load correctly', function() {
-    expect(1).to.eq(1);
+    expect(agile.example.app.Home).not.to.eq(undefined);
   });
 
   it('test home ui render correctly', function() {
-    expect(1).to.eq(1);
+    var appHomePanel = Ext.getCmp('app.home');
+    expect(appHomePanel).not.to.eq(undefined);
   });
 });
 
