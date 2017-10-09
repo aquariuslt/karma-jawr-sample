@@ -13,8 +13,11 @@ module.exports = function(config) {
     browsers: [
       'ChromiumHeadless'
     ],
+    useIframe: true,
+    runInParent: false,
     plugins: [
       'karma-chrome-launcher',
+      'karma-firefox-launcher',
       'karma-coverage',
       'karma-coverage-istanbul-reporter',
       'karma-mocha',
