@@ -14,11 +14,15 @@ The focus point is: How to write graceful javascript unittest in server render t
 - JAWR Locale Message Generator
 - Ext3
 
-
 ## Features
 - Karma + Mocha + Chai
 - Sinon
 - Integration with CI System
+
+## Problems
+- **How to load necessary JS files into runtime easily?** Because IRIS4 PRS uses JAWR as assets bundling tool to compact multiple JS files into one. Then IRIS4 Front-end uses `<script>` tags to include those bundles. This make it difficult to get the correct dependencies JS files.
+- **How to mock the Locale Message Generator in global?** Currently the JAWR Locale Message Generator is assigned as a property of the global object(We use it like `docmessages.blc.field.bl('Hello')`). We need to construct this object when running test cases otherwise a lot of code will throw exception.
+- **No best practice for Ext3 can be found fron Internet**
 
 ## Plan: outline
 
