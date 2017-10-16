@@ -11,7 +11,7 @@ process.env.CHROMIUM_BIN = revisionInfo.executablePath;
 module.exports = function(config) {
   config.set({
     browsers: [
-      'ChromiumHeadless'
+      'ChromiumHeadlessNoSandbox'
     ],
     useIframe: true,
     runInParent: false,
@@ -67,6 +67,12 @@ module.exports = function(config) {
     webpackMiddleware: {
       stats: 'errors-only',
       noInfo: true
+    },
+    customLaunchers: {
+      ChromiumHeadlessNoSandbox: {
+        base: 'ChromiumHeadless',
+        flags: ['--no-sandbox']
+      }
     }
   });
 };
