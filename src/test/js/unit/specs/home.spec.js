@@ -1,4 +1,5 @@
 /* Vendor import */
+require('@/cssBundles/ext.css/');
 require('@/jsBundles/extJs.js/');
 require('@/jsBundles/home.js/');
 
