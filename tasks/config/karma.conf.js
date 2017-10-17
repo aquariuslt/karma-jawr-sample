@@ -20,6 +20,7 @@ module.exports = function(config) {
       'karma-firefox-launcher',
       'karma-coverage',
       'karma-coverage-istanbul-reporter',
+      'karma-junit-reporter',
       'karma-mocha',
       'karma-sinon-chai',
       'karma-spec-reporter',
@@ -36,6 +37,7 @@ module.exports = function(config) {
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
+      'junit',
       'spec',
       'coverage-istanbul'
     ],
@@ -62,6 +64,11 @@ module.exports = function(config) {
           functions: 1
         }
       }
+    },
+    junitReporter: {
+      outputDir: pathUtil.resolve('src/test/js/unit') + '/coverage',
+      outputFile: 'test-results.xml',
+      useBrowserName: false,
     },
     webpack: webpackTestConfig,
     webpackMiddleware: {
