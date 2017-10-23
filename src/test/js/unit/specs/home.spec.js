@@ -14,10 +14,15 @@ describe('home', function() {
    * */
 
   before('# fire ext ready event and initial component', function(done) {
-    new agile.example.app.Home({
-      renderTo: Ext.getBody()
+    Ext.onReady(function() {
+      console.log('execute Ext.onReady handler');
+      if (_.get(window, 'agile.example.app.Home')) {
+        new agile.example.app.Home({
+          renderTo: Ext.getBody()
+        });
+      }
+      done();
     });
-    done();
   });
 
   after('# destroy event and component', function() {
