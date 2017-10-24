@@ -22,7 +22,8 @@ module.exports = function(config) {
       'karma-coverage-istanbul-reporter',
       'karma-junit-reporter',
       'karma-mocha',
-      'karma-sinon-chai',
+      'karma-sinon',
+      'karma-chai',
       'karma-spec-reporter',
       'karma-sourcemap-loader',
       'karma-webpack',
@@ -31,7 +32,8 @@ module.exports = function(config) {
     frameworks: [
       'jawr',
       'mocha',
-      'sinon-chai'
+      'sinon',
+      'chai'
     ],
     files: [
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'

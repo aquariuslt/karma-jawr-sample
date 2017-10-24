@@ -1,3 +1,5 @@
+
+var expect = window.chai.expect;
 /* Vendor import */
 require('@/cssBundles/ext.css/');
 require('@/jsBundles/extJs.js/');
@@ -15,7 +17,6 @@ describe('home', function() {
 
   before('# fire ext ready event and initial component', function(done) {
     Ext.onReady(function() {
-      console.log('execute Ext.onReady handler');
       if (_.get(window, 'agile.example.app.Home')) {
         new agile.example.app.Home({
           renderTo: Ext.getBody()
@@ -34,6 +35,11 @@ describe('home', function() {
   });
 
   it('# test home ui render correctly', function() {
+    var appHomePanel = Ext.getCmp('app.home');
+    expect(appHomePanel).not.to.eq(undefined);
+  });
+
+  it('# test home ui render correctly 2', function() {
     var appHomePanel = Ext.getCmp('app.home');
     expect(appHomePanel).not.to.eq(undefined);
   });

@@ -1,3 +1,4 @@
+var expect = window.chai.expect;
 require('@/jsBundles/extJs.js/');
 
 var sinon = require('sinon');
