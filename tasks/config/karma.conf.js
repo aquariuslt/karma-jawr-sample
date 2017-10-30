@@ -27,13 +27,15 @@ module.exports = function(config) {
       'karma-spec-reporter',
       'karma-sourcemap-loader',
       'karma-webpack',
-      'karma-jawr'
+      'karma-jawr',
+      'karma-iframes'
     ],
     frameworks: [
       'jawr',
       'mocha',
       'sinon',
-      'chai'
+      'chai',
+      'iframes'
     ],
     files: [
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
@@ -44,7 +46,7 @@ module.exports = function(config) {
       'coverage-istanbul'
     ],
     preprocessors: {
-      '/**/*.spec.js': ['webpack', 'sourcemap']
+      '/**/*.spec.js': ['webpack', 'sourcemap', 'iframes']
     },
     jawr: {
       configLocation: pathUtil.resolve('src/main/resources/jawr/') + 'jawr.properties',

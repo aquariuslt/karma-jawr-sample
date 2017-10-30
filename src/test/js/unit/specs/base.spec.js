@@ -1,4 +1,6 @@
-var expect = window.chai.expect;
+
+require('@/jsBundles/extJs.js');
+
 describe('base', function() {
 
   it('# test jawr global resource load complete', function() {

@@ -12,7 +12,7 @@ describe('home', function() {
 
   /**
    * In `before` case, we try the behavior like `home.xhtml`
-   * to apply home to Ext.getBody()
+   * to apply home to Ext.getBody() or using new document.createElement with customize id;
    * */
 
   before('# fire ext ready event and initial component', function(done) {
