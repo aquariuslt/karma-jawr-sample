@@ -1,5 +1,3 @@
-
-var expect = window.chai.expect;
 /* Vendor import */
 require('@/cssBundles/ext.css/');
 require('@/jsBundles/extJs.js/');
