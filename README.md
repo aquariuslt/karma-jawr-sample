@@ -43,8 +43,11 @@ $ npm install
 ```
 
 > For China User, since `puppeteer v0.13.0` support CHROMIUM binary download mirror
+> 
 > Please export environment variables `PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org` before npm install
+> 
 > For Windows Run `SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org`
+> 
 > For Unix Run `export PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org`
 
 ### Frontend UnitTest
