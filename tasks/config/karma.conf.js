@@ -1,9 +1,9 @@
 var pathUtil = require('../utils/path.util');
 var webpackTestConfig = require('./webpack.test.config');
-//
+
 var puppeteerPkg = require('puppeteer/package.json');
 var Downloader = require('puppeteer/lib/Downloader');
-//
+
 var chromiumRevision = puppeteerPkg['puppeteer']['chromium_revision'];
 var downloader = Downloader.createDefault();
 var revisionInfo = downloader.revisionInfo(downloader.currentPlatform(),chromiumRevision);
