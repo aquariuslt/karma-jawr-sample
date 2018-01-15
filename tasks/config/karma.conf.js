@@ -1,11 +1,12 @@
 var pathUtil = require('../utils/path.util');
 var webpackTestConfig = require('./webpack.test.config');
-
+//
 var puppeteerPkg = require('puppeteer/package.json');
-var Downloader = require('puppeteer/utils/ChromiumDownloader');
-
-var ChromiumRevision = puppeteerPkg['puppeteer']['chromium_revision'];
-var revisionInfo = Downloader.revisionInfo(Downloader.currentPlatform(), ChromiumRevision);
+var Downloader = require('puppeteer/lib/Downloader');
+//
+var chromiumRevision = puppeteerPkg['puppeteer']['chromium_revision'];
+var downloader = Downloader.createDefault();
+var revisionInfo = downloader.revisionInfo(downloader.currentPlatform(),chromiumRevision);
 process.env.CHROMIUM_BIN = revisionInfo.executablePath;
 
 module.exports = function(config) {
@@ -36,6 +37,8 @@ module.exports = function(config) {
       'chai'
     ],
     files: [
+      pathUtil.resolve('src/main/webapp/js/vendor/ext') + '/ext-base.js',
+      pathUtil.resolve('src/main/webapp/js/vendor/ext') + '/ext-all.js',
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
@@ -70,7 +73,7 @@ module.exports = function(config) {
     junitReporter: {
       outputDir: pathUtil.resolve('src/test/js/unit') + '/coverage',
       outputFile: 'test-results.xml',
-      useBrowserName: false,
+      useBrowserName: false
     },
     webpack: webpackTestConfig,
     webpackMiddleware: {

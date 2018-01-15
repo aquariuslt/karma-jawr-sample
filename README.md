@@ -31,7 +31,7 @@ The focus point is: How to write graceful javascript unittest in server render t
 
 ### Install Dependencies
 ```bash
-$ mvn clean install && npm install
+$ mvn install && npm install
 ```
 
 ### Build War & Deploy

@@ -1,7 +1,6 @@
 /* Vendor import */
-require('@/cssBundles/ext.css/');
-require('@/jsBundles/extJs.js/');
-require('@/jsBundles/home.js/');
+require('@/cssBundles/ext.css');
+require('@/jsBundles/home.js');
 
 /* Unit test level lib import */
 var _ = require('lodash');
