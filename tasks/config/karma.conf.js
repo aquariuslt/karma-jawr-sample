@@ -15,15 +15,14 @@ module.exports = function(config) {
     runInParent: false,
     plugins: [
       'karma-chrome-launcher',
-      'karma-firefox-launcher',
+      'karma-chai',
+      'karma-mocha',
       'karma-coverage',
       'karma-coverage-istanbul-reporter',
-      'karma-junit-reporter',
-      'karma-mocha',
-      'karma-sinon',
-      'karma-chai',
-      'karma-spec-reporter',
       'karma-sourcemap-loader',
+      'karma-spec-reporter',
+      'karma-junit-reporter',
+      'karma-sinon',
       'karma-webpack',
       'karma-jawr'
     ],
@@ -39,9 +38,9 @@ module.exports = function(config) {
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
-      'junit',
       'spec',
-      'coverage-istanbul'
+      'coverage-istanbul',
+      'junit'
     ],
     preprocessors: {
       '/**/*.spec.js': ['webpack', 'sourcemap']
