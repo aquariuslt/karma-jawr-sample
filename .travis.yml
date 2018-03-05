@@ -8,5 +8,6 @@ script: npm run test
 
 # Submit Coverage Status to coveralls.io
 after_script:
+  - pwd && ls
   - cat ./src/test/js/unit/coverage/lcov.info
   - cat ./src/test/js/unit/coverage/lcov.info | ./node_modules/.bin/coveralls
