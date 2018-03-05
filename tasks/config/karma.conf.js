@@ -38,7 +38,7 @@ module.exports = function(config) {
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
-      'junit',
+      // 'junit',
       'spec',
       'coverage-istanbul'
     ],
