@@ -38,7 +38,7 @@ module.exports = function(config) {
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
-      // 'junit',
+      'junit',
       'spec',
       'coverage-istanbul'
     ],
@@ -46,7 +46,7 @@ module.exports = function(config) {
       '/**/*.spec.js': ['webpack', 'sourcemap']
     },
     jawr: {
-      configLocation: pathUtil.resolve('src/main/resources/jawr/') + 'jawr.properties',
+      configLocation: pathUtil.resolve('src/main/resources/jawr') + '/jawr.properties',
       webappLocation: pathUtil.resolve('src/main/webapp'),
       targetLocation: pathUtil.resolve('src/test/js/build'),
       localeConfigLocation: pathUtil.resolve('src/main/resources')

@@ -21,7 +21,7 @@ rebel.xml
 
 # Node
 node_modules
-package-lock.json
+#package-lock.json
 yarn.lock
 
 # Karma Mocha Coverage Series
