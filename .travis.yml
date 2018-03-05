@@ -7,9 +7,6 @@ cache: yarn
 install:
   - yarn
 
-before_script:
-  - yarn add global gulp
-
 script: yarn run test
 
 # Submit Coverage Status to coveralls.io

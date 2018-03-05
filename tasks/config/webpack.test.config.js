@@ -41,7 +41,7 @@ module.exports = {
         enforce: 'post',
         test: /\.js$/,
         include: [
-          pathUtil.resolve('src/main/webapp')
+          pathUtil.resolve('src/main/webapp/js')
         ],
         exclude: [
           /node_modules/,

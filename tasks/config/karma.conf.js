@@ -57,9 +57,11 @@ module.exports = function(config) {
       reports: [
         'html',
         'lcovonly',
+        'lcov',
+        'text-lcov',
         'text-summary'
       ],
-      fixWebpackSourcePaths: false,
+      fixWebpackSourcePaths: true,
       skipFilesWithNoCoverage: true,
       thresholds: {
         emitWarning: false,
