@@ -1,15 +1,26 @@
+/** Created by CUIJA on 2017-09-27.*/
+require('@/jsBundles/extJs.js');
+require('@/jsBundles/home.js');
 
-describe('base', function() {
+describe('ext', function() {
 
-  it('# test jawr global resource load complete', function() {
-    var defaultLocaleMessage = i18n.home.title();
-    expect(defaultLocaleMessage).to.eq('HomePage Sample Title');
+  before(function() {
+    Ext.onReady(function() {
+      Ext.QuickTips.init();
+      new agile.example.app.Home({
+        renderTo: Ext.getBody()
+      });
+    });
   });
 
-  it('# test jawr global message generator with arguments', function() {
-    var localeMessage = i18n.home.subtitle('Hello');
-    var expectedLocalMessage = 'Home Subtitle: Hello';
-    expect(localeMessage).to.eq(expectedLocalMessage);
+  it('# check extjs is loaded', function() {
+    var expectExtVersion = '3.3.1';
+    expect(Ext.version).to.eq(expectExtVersion);
   });
+
+  it('# expect home ui is rendered', function() {
+    expect(Ext.getCmp('app.home')).not.to.eq(undefined);
+  });
+
 
 });
