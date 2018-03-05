@@ -8,7 +8,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      '@': pathUtil.resolve('/src/test/js/build')
+      '@': pathUtil.resolve('src/test/js/build')
     }
   },
   output: {
@@ -41,7 +41,7 @@ module.exports = {
         enforce: 'post',
         test: /\.js$/,
         include: [
-          pathUtil.resolve('src/main/webapp/js')
+          pathUtil.resolve('src/main/webapp')
         ],
         exclude: [
           /node_modules/,

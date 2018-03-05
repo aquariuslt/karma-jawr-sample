@@ -55,14 +55,11 @@ module.exports = function(config) {
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
       reports: [
-        'html',
         'lcovonly',
-        'lcov',
-        'text-lcov',
         'text-summary'
       ],
       fixWebpackSourcePaths: true,
-      skipFilesWithNoCoverage: true,
+      skipFilesWithNoCoverage: false,
       thresholds: {
         emitWarning: false,
         global: {
