@@ -22,7 +22,6 @@ module.exports = function(config) {
       'karma-coverage-istanbul-reporter',
       'karma-sourcemap-loader',
       'karma-spec-reporter',
-      'karma-junit-reporter',
       'karma-sinon',
       'karma-webpack',
       'karma-jawr'
@@ -40,8 +39,7 @@ module.exports = function(config) {
     ],
     reporters: [
       'spec',
-      'coverage-istanbul',
-      'junit'
+      'coverage-istanbul'
     ],
     preprocessors: {
       '/**/*.spec.js': ['webpack', 'sourcemap']
@@ -69,11 +67,6 @@ module.exports = function(config) {
           functions: 1
         }
       }
-    },
-    junitReporter: {
-      outputDir: pathUtil.resolve('src/test/js/unit') + '/coverage',
-      outputFile: 'test-results.xml',
-      useBrowserName: false
     },
     webpack: webpackTestConfig,
     webpackMiddleware: {
