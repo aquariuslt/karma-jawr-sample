@@ -4,6 +4,7 @@ var webpackTestConfig = require('./webpack.test.config');
 var puppeteer = require('puppeteer');
 
 process.env.CHROMIUM_BIN = puppeteer.executablePath();
+process.env.CHROME_BIN  =  puppeteer.executablePath();
 
 module.exports = function(config) {
   config.set({
