@@ -1,7 +1,7 @@
-# Agile Practice: Spring + JAWR + Ext3 Practice
+# Agile Practice: Spring + JAWR + Ext3 Example
 
-[![Build Status](https://travis-ci.org/Aquariuslt/spring-jawr-ext.svg?branch=master)](https://travis-ci.org/Aquariuslt/spring-jawr-ext)
-[![Coverage Status](https://coveralls.io/repos/github/Aquariuslt/spring-jawr-ext/badge.svg?branch=master)](https://coveralls.io/github/Aquariuslt/spring-jawr-ext?branch=master)
+[![Build Status](https://travis-ci.org/aquariuslt/spring-jawr-ext.svg?branch=master)](https://travis-ci.org/Aquariuslt/spring-jawr-ext)
+[![Coverage Status](https://coveralls.io/repos/github/aquariuslt/spring-jawr-ext/badge.svg?branch=master)](https://coveralls.io/github/aquariuslt/spring-jawr-ext?branch=master)
 
 
 The focus point is: How to write graceful javascript unittest in server render template engine.
@@ -42,13 +42,21 @@ You can deploy you war file in `target/agile-pratice.war` to your webapp contain
 $ npm install
 ```
 
-> For China User, since `puppeteer v0.13.0` support CHROMIUM binary download mirror
-> 
-> Please export environment variables `PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org` before npm install
-> 
-> For Windows Run `SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org`
-> 
-> For Unix Run `export PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org`
+For China User, since `puppeteer v0.13.0` support CHROMIUM binary download mirror.
+
+Please export environment variables `PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org` before npm install
+
+For Windows Run 
+
+```bash
+SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org
+```
+
+For Unix Run 
+```bash
+export PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org
+```
+
 
 ### Frontend UnitTest
 ```bash
