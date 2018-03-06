@@ -8,7 +8,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      '@': pathUtil.resolve('/src/test/js/build')
+      '@': pathUtil.resolve('src/test/js/build')
     }
   },
   output: {
@@ -20,7 +20,8 @@ module.exports = {
       {
         test: /\.css$/,
         include: [
-          pathUtil.resolve('src/main/webapp')
+          pathUtil.resolve('src/main/webapp'),
+          pathUtil.resolve('src/test/js/unit/specs')
         ],
         exclude: [
           /node_modules/

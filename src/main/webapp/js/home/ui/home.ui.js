@@ -21,7 +21,7 @@ agile.example.app.HomeUi = Ext.extend(Ext.Viewport, {
             items: [
               {
                 xtype: 'label',
-                text: i18n.home.title(),
+                text: locale.home.subtitle('Agile'),
                 style: {
                   'font-family': '"Tahoma"',
                   'font-size': '30px'

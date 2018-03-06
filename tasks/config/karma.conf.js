@@ -4,6 +4,7 @@ var webpackTestConfig = require('./webpack.test.config');
 var puppeteer = require('puppeteer');
 
 process.env.CHROMIUM_BIN = puppeteer.executablePath();
+process.env.CHROME_BIN  =  puppeteer.executablePath();
 
 module.exports = function(config) {
   config.set({
@@ -21,7 +22,6 @@ module.exports = function(config) {
       'karma-coverage-istanbul-reporter',
       'karma-sourcemap-loader',
       'karma-spec-reporter',
-      'karma-junit-reporter',
       'karma-sinon',
       'karma-webpack',
       'karma-jawr'
@@ -39,8 +39,7 @@ module.exports = function(config) {
     ],
     reporters: [
       'spec',
-      'coverage-istanbul',
-      'junit'
+      'coverage-istanbul'
     ],
     preprocessors: {
       '/**/*.spec.js': ['webpack', 'sourcemap']
@@ -54,12 +53,11 @@ module.exports = function(config) {
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
       reports: [
-        'html',
         'lcovonly',
         'text-summary'
       ],
-      fixWebpackSourcePaths: false,
-      skipFilesWithNoCoverage: true,
+      fixWebpackSourcePaths: true,
+      skipFilesWithNoCoverage: false,
       thresholds: {
         emitWarning: false,
         global: {
@@ -69,11 +67,6 @@ module.exports = function(config) {
           functions: 1
         }
       }
-    },
-    junitReporter: {
-      outputDir: pathUtil.resolve('src/test/js/unit') + '/coverage',
-      outputFile: 'test-results.xml',
-      useBrowserName: false
     },
     webpack: webpackTestConfig,
     webpackMiddleware: {
