@@ -1,5 +1,5 @@
 {
-  "name": "spring-jawr-ext",
+  "name": "jawr-js-unittest-sample-spring-ext",
   "version": "1.0.3",
   "description": "spring + jawr + extjs3 sample project with ext unittest using karma-jawr",
   "repository": "https://github.com/aquariuslt/spring-jawr-ext.git",

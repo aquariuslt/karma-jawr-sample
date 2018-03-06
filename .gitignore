@@ -1,29 +1,24 @@
-# IDE
+# IDEA
 .idea
 *.iml
 
-.settings
-.project
-.classpath
-
+# VSCode
 .vscode
-
-*.sublime
-
-# Maven
-target
-
-# JRebel
-rebel.xml
-
-# Log
-*.log
 
 # Node
 node_modules
-#package-lock.json
+package-lock.json
 yarn.lock
 
-# Karma Mocha Coverage Series
+# Logs
+*.log
+
+# Build & Distribution
 build
+dist
+
+# Test
 coverage
+
+# JRebel
+rebel.xml
