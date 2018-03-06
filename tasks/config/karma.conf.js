@@ -1,27 +1,32 @@
-var pathUtil = require('../utils/path.util');
+/** Created by CUIJA on 2017-09-27.*/
+
 var webpackTestConfig = require('./webpack.test.config');
+var pathUtil = require('../utils/path.util');
 
 var puppeteer = require('puppeteer');
-
 process.env.CHROMIUM_BIN = puppeteer.executablePath();
-process.env.CHROME_BIN  =  puppeteer.executablePath();
+
 
 module.exports = function(config) {
   config.set({
     logLevel: config.LOG_DEBUG,
+    customLaunchers: {
+      ChromiumHeadlessNoSandbox: {
+        base: 'ChromiumHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     browsers: [
       'ChromiumHeadlessNoSandbox'
     ],
-    useIframe: true,
-    runInParent: false,
     plugins: [
       'karma-chrome-launcher',
       'karma-chai',
       'karma-mocha',
+      'karma-spec-reporter',
       'karma-coverage',
       'karma-coverage-istanbul-reporter',
       'karma-sourcemap-loader',
-      'karma-spec-reporter',
       'karma-sinon',
       'karma-webpack',
       'karma-jawr'
@@ -33,8 +38,6 @@ module.exports = function(config) {
       'chai'
     ],
     files: [
-      pathUtil.resolve('src/main/webapp/js/vendor/ext') + '/ext-base.js',
-      pathUtil.resolve('src/main/webapp/js/vendor/ext') + '/ext-all.js',
       pathUtil.resolve('src/test/js/unit/specs') + '/**/*.spec.js'
     ],
     reporters: [
@@ -45,19 +48,21 @@ module.exports = function(config) {
       '/**/*.spec.js': ['webpack', 'sourcemap']
     },
     jawr: {
-      configLocation: pathUtil.resolve('src/main/resources/jawr') + '/jawr.properties',
+      configLocation: pathUtil.resolve('src/main/resources/jawr/') + 'jawr.properties',
       webappLocation: pathUtil.resolve('src/main/webapp'),
       targetLocation: pathUtil.resolve('src/test/js/build'),
       localeConfigLocation: pathUtil.resolve('src/main/resources')
     },
+    webpack: webpackTestConfig,
+    webpackMiddleware: {
+      stats: 'errors-only',
+      noInfo: true
+    },
     coverageIstanbulReporter: {
       dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
-      reports: [
-        'lcovonly',
-        'text-summary'
-      ],
+      reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
-      skipFilesWithNoCoverage: false,
+      skipFilesWithNoCoverage: true,
       thresholds: {
         emitWarning: false,
         global: {
@@ -66,17 +71,6 @@ module.exports = function(config) {
           branches: 1,
           functions: 1
         }
-      }
-    },
-    webpack: webpackTestConfig,
-    webpackMiddleware: {
-      stats: 'errors-only',
-      noInfo: true
-    },
-    customLaunchers: {
-      ChromiumHeadlessNoSandbox: {
-        base: 'ChromiumHeadless',
-        flags: ['--no-sandbox']
       }
     }
   });
