@@ -1,6 +1,6 @@
 # Agile Practice: Spring + JAWR + Ext3 Example
 
-[![Build Status](https://travis-ci.org/aquariuslt/spring-jawr-ext.svg?branch=master)](https://travis-ci.org/aquariuslt/spring-jawr-ext)
+[![Build Status](https://travis-ci.org/aquariuslt/jawr-js-unittest-sample-spring-ext.svg?branch=master)](https://travis-ci.org/aquariuslt/jawr-js-unittest-sample-spring-ext)
 [![Coverage Status](https://coveralls.io/repos/github/aquariuslt/spring-jawr-ext/badge.svg?branch=master)](https://coveralls.io/github/aquariuslt/spring-jawr-ext?branch=master)
 
 
