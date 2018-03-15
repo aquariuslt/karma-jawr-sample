@@ -1,5 +1,3 @@
-/** Created by CUIJA on 2017-09-27.*/
-
 var webpackTestConfig = require('./webpack.test.config');
 var pathUtil = require('../utils/path.util');
 

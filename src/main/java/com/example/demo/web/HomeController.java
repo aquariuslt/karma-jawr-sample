@@ -1,4 +1,4 @@
-package agile.web;
+package com.example.demo.web;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
