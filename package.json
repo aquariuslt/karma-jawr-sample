@@ -1,7 +1,7 @@
 {
-  "name": "jawr-js-unittest-sample-spring-ext",
-  "version": "1.0.3",
-  "description": "spring + jawr + extjs3 sample project with ext unittest using karma-jawr",
+  "name": "karma-jawr-sample",
+  "version": "1.0.4",
+  "description": "spring + jawr + extjs sample project with unittest using karma-jawr",
   "repository": "https://github.com/aquariuslt/spring-jawr-ext.git",
   "author": "Aquariuslt <superaquariuslt@gmail.com>",
   "license": "MIT",

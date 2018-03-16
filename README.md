@@ -1,7 +1,7 @@
-# Agile Practice: Spring + JAWR + Ext3 Example
+# Karma Jawr Sample
 
-[![Build Status](https://travis-ci.org/aquariuslt/jawr-js-unittest-sample-spring-ext.svg?branch=master)](https://travis-ci.org/aquariuslt/jawr-js-unittest-sample-spring-ext)
-[![Coverage Status](https://coveralls.io/repos/github/aquariuslt/jawr-js-unittest-sample-spring-ext/badge.svg?branch=master)](https://coveralls.io/github/aquariuslt/jawr-js-unittest-sample-spring-ext?branch=master)
+[![Build Status](https://travis-ci.org/aquariuslt/karma-jawr-sample.svg?branch=master)](https://travis-ci.org/aquariuslt/karma-jawr-sample)
+[![Coverage Status](https://coveralls.io/repos/github/aquariuslt/karma-jawr-sample/badge.svg?branch=master)](https://coveralls.io/github/aquariuslt/karma-jawr-sample?branch=master)
 
 
 The focus point is: Providing a way to show: how to write graceful javascript unittest in server render template engine.
@@ -35,7 +35,7 @@ mvn install && npm install
 ```
 
 ### Build War & Deploy
-You can deploy you war file in `target/agile-pratice.war` to your webapp container.(Tomcat, JBoss, Weblogic...)
+You can deploy you war file in `target/karma-jawr.war` to your webapp container.(Tomcat, JBoss, Weblogic...)
 
 ### Install Frontend UnitTest Dependencies
 ```bash
@@ -44,12 +44,12 @@ npm install
 
 For China User, since `puppeteer v0.13.0` support CHROMIUM binary download mirror.
 
-Please export environment variables `PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org` before npm install
+Please export environment variables `PUPPETEER_DOWNLOAD_HOST=https://npm.taobao.org/mirrors` before npm install
 
 For Windows Run 
 
 ```bash
-SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org
+SET PUPPETEER_DOWNLOAD_HOST=https://npm.taobao.org/mirrors
 ```
 
 > Since 2018-03-13 cnpmjs.org network issue, found another mirror on taobao.org
@@ -58,7 +58,7 @@ SET PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org
 
 For Unix Run 
 ```bash
-export PUPPETEER_DOWNLOAD_HOST=https://storage.googleapis.com.cnpmjs.org
+export PUPPETEER_DOWNLOAD_HOST=https://npm.taobao.org/mirrors
 ```
 
 
