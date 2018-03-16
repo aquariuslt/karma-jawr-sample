@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>agile-practice</groupId>
-    <artifactId>spring-jawr-ext3</artifactId>
+    <groupId>com.aquariuslt.demo</groupId>
+    <artifactId>karma-jawr-sample</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Agile-Practice</name>
+    <name>Karma-Jawr Sample</name>
 
     <properties>
-        <war.name>agile-practice</war.name>
+        <war.name>karma-jawr-sample</war.name>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
