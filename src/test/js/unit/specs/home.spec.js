@@ -14,8 +14,8 @@ describe('home', function() {
 
   before('# fire ext ready event and initial component', function(done) {
     Ext.onReady(function() {
-      if (_.get(window, 'agile.example.app.Home')) {
-        new agile.example.app.Home({
+      if (_.get(window, 'karma.jawr.sample.app.Home')) {
+        new karma.jawr.sample.app.Home({
           renderTo: Ext.getBody()
         });
       }
@@ -28,7 +28,7 @@ describe('home', function() {
   });
 
   it('# test home resources load correctly', function() {
-    expect(agile.example.app.Home).not.to.eq(undefined);
+    expect(karma.jawr.sample.app.Home).not.to.eq(undefined);
   });
 
   it('# test home ui render correctly', function() {
