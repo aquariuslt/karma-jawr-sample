@@ -1,9 +1,9 @@
 var webpackTestConfig = require('./webpack.test.config');
+var profileConfig = require('./profile.config');
 var pathUtil = require('../utils/path.util');
 
 var puppeteer = require('puppeteer');
 process.env.CHROMIUM_BIN = puppeteer.executablePath();
-
 
 module.exports = function(config) {
   config.set({
@@ -46,7 +46,7 @@ module.exports = function(config) {
       '/**/*.spec.js': ['webpack', 'sourcemap']
     },
     jawr: {
-      configLocation: pathUtil.resolve('src/main/resources/jawr/') + 'jawr.properties',
+      configLocation: profileConfig.bar.mappings[0].output,
       webappLocation: pathUtil.resolve('src/main/webapp'),
       targetLocation: pathUtil.resolve('src/test/js/build'),
       localeConfigLocation: pathUtil.resolve('src/main/resources')
@@ -57,7 +57,7 @@ module.exports = function(config) {
       noInfo: true
     },
     coverageIstanbulReporter: {
-      dir: pathUtil.resolve('src/test/js/unit') + '/coverage',
+      dir: pathUtil.resolve('src/test/js/unit') + '/coverage/bar',
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
       skipFilesWithNoCoverage: true,
