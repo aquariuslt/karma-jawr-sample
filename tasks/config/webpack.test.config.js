@@ -4,6 +4,7 @@ var pathUtil = require('../utils/path.util');
 var pkg = require('../../package.json');
 
 module.exports = {
+  mode: 'development',
   devtool: 'eval-source-map',
   resolve: {
     extensions: ['.js', '.json'],
