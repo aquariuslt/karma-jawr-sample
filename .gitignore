@@ -20,5 +20,8 @@ dist
 # Test
 coverage
 
+# Maven
+target
+
 # JRebel
 rebel.xml
